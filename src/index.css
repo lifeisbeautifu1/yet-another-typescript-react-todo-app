@@ -1,13 +1,176 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.5;
+}
+
+.heading {
+    font-family: 'Concert One';
+}
+
+
+.app {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2f74c0;
+}
+
+.heading {
+    text-decoration: uppercase;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .heading {
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+}
+
+.input-form {
+    display: flex;
+    width: 95%;
+    position: relative;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    border-radius: 50px;
+    padding: 1.25rem 1.875rem;
+    font-size: 1.5rem;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+}
+
+.input:focus {
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.submit-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 0.75rem;
+    border-radius: 50px;
+    right: 0;
+    border: none;
+    font-size: 1rem;
+    background-color: #2f74c0;
+    color: #fff;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #388ae2;
+}
+
+.submit-btn:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 5px black;
+}
+
+
+.container {
+    width: 95%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.todos {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding: 15px;
+    background-color: rgba(50, 195, 205);
+}
+
+.dragactive {
+    background-color: rgb(0, 221, 236);
+}
+
+.dragcomplete {
+    background-color: rgba(255, 38, 0);
+}
+
+.remove {
+    background-color: rgb(235, 103, 80);
+}
+
+.todos-heading {
+   font-size: 2rem;
+   color: #fff;
+}
+
+.todo-single {
+    display: flex;
+    border-radius: 5px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+    transition: 0.2s;
+}
+
+.todo-single:hover {
+    box-shadow: 0 0 5px black;
+    transform: scale(1.03);
+}
+
+.todo-single-text {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.todo-single-text:focus {
+    outline: none;
+}
+
+.icon {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .todos {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+  
+
+    .container {
+        width: 95%;
+        flex-direction: column;
+    }
+    .todos {
+        width: 95%;
+        margin-bottom: 10px;
+    }
 }
